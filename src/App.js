@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './components/Card';
+import './index.css';
 import Form from './components/Form';
 
 const maxValue = 210;
@@ -13,7 +14,7 @@ class App extends React.Component {
     cardAttr2: '',
     cardAttr3: '',
     cardImage: '',
-    cardRare: 'normal',
+    cardRare: '',
     cardTrunfo: false,
     card: [],
     hasTrunfo: false,
