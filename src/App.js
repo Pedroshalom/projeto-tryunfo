@@ -2,6 +2,9 @@ import React from 'react';
 import Card from './components/Card';
 import Form from './components/Form';
 
+const maxValue = 210;
+const maxCounter = 90;
+
 class App extends React.Component {
   state = {
     cardName: '',
@@ -13,6 +16,28 @@ class App extends React.Component {
     cardRare: '',
     cardTrunfo: false,
     // hasTrunfo: false,
+  };
+
+  disabledButton = () => {
+    const { cardName,
+      cardDescription, cardImage, cardAttr1, cardAttr2, cardAttr3 } = this.state;
+    const counter = (Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3));
+    let counters = true;
+    let biggerThen = true;
+    const number1 = Number(cardAttr1);
+    const number2 = Number(cardAttr2);
+    const number3 = Number(cardAttr3);
+    if (number1 < 0 || number2 < 0 || number3 < 0) {
+      counters = false;
+    }
+    if (number1 > maxCounter || number2
+      > maxCounter || number3 > maxCounter) {
+      biggerThen = false;
+    } else if (cardName && cardDescription && cardImage && (counter <= maxValue)
+    && counters && biggerThen) {
+      return false;
+    }
+    return true;
   };
 
   onInputChange = ({ target }) => {
@@ -46,6 +71,8 @@ class App extends React.Component {
           cardImage={ cardImage }
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
+          isSaveButtonDisabled={ this.disabledButton() }
+          onSaveButtonClick={ this.cards }
         />
         <Card
           cardName={ cardName }

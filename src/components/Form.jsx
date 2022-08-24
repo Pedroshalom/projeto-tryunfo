@@ -45,6 +45,8 @@ class Form extends React.Component {
         <label htmlFor="attr1">
           Attr 1:
           <input
+            max={ 90 }
+            min={ 0 }
             data-testid="attr1-input"
             name="cardAttr1"
             type="number"
@@ -56,6 +58,8 @@ class Form extends React.Component {
         <label htmlFor="attr2">
           Attr 2:
           <input
+            max={ 90 }
+            min={ 0 }
             data-testid="attr2-input"
             name="cardAttr2"
             type="number"
@@ -67,6 +71,8 @@ class Form extends React.Component {
         <label htmlFor="attr3">
           Attr 3:
           <input
+            max={ 90 }
+            min={ 0 }
             data-testid="attr3-input"
             name="cardAttr3"
             type="number"
