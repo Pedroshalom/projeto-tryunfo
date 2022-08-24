@@ -16,7 +16,16 @@ class App extends React.Component {
     cardRare: 'normal',
     cardTrunfo: false,
     card: [],
-    // hasTrunfo: false,
+    hasTrunfo: false,
+  };
+
+  verificaSupertrunfo = () => {
+    const { state } = this;
+    const { card } = state;
+    if (card.length === 0) {
+      return false;
+    }
+    return card.some((cards) => cards.cardTrunfo === true);
   };
 
   disabledButton = () => {
@@ -50,6 +59,7 @@ class App extends React.Component {
   };
 
   onSaveButtonClick = (objetoInfo) => {
+    this.verificaSupertrunfo();
     this.setState((prevState) => ({
       card: [...prevState.card, objetoInfo],
       cardName: '',
@@ -59,6 +69,7 @@ class App extends React.Component {
       cardAttr1: 0,
       cardAttr2: 0,
       cardAttr3: 0,
+      hasTrunfo: true,
     }));
   };
 
@@ -71,7 +82,7 @@ class App extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      // hasTrunfo,
+      hasTrunfo,
     } = this.state;
     return (
       <div>
@@ -86,7 +97,7 @@ class App extends React.Component {
           cardImage={ cardImage }
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
-          // hasTrunfo={ hasTrunfo }
+          hasTrunfo={ hasTrunfo }
           isSaveButtonDisabled={ this.disabledButton() }
           onSaveButtonClick={ this.onSaveButtonClick }
         />
