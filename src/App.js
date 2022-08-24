@@ -17,6 +17,7 @@ class App extends React.Component {
     cardTrunfo: false,
     card: [],
     hasTrunfo: false,
+    previewOn: false,
   };
 
   verificaSupertrunfo = () => {
@@ -62,6 +63,7 @@ class App extends React.Component {
     this.verificaSupertrunfo();
     this.setState((prevState) => ({
       card: [...prevState.card, objetoInfo],
+      previewOn: true,
       cardName: '',
       cardDescription: '',
       cardImage: '',
@@ -83,6 +85,8 @@ class App extends React.Component {
       cardRare,
       cardTrunfo,
       hasTrunfo,
+      previewOn,
+      card,
     } = this.state;
     return (
       <div>
@@ -101,6 +105,19 @@ class App extends React.Component {
           isSaveButtonDisabled={ this.disabledButton() }
           onSaveButtonClick={ this.onSaveButtonClick }
         />
+        {
+          previewOn === true && card.map((e) => (<Card
+            key={ e.cardName }
+            cardName={ e.cardName }
+            cardDescription={ e.cardDescription }
+            cardImage={ e.cardImage }
+            cardAttr1={ e.cardAttr1 }
+            cardAttr2={ e.cardAttr2 }
+            cardAttr3={ e.cardAttr3 }
+            cardRare={ e.cardRare }
+            cardTrunfo={ e.cardTrunfo }
+          />))
+        }
         <Card
           cardName={ cardName }
           cardDescription={ cardDescription }
