@@ -5,8 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
-  color: white;
+  background-color: #32a791;
+  background-image: url(../images/foto.png);
 }
 
 code {
@@ -18,6 +18,23 @@ form {
   display: flex;
   flex-flow: column wrap;
   box-sizing: border-box;    
+}
+
+.div-form {
+  display: flex;
+  height: auto;
+  color: black;
+  justify-content: center;
+  margin: auto;
+  width: 70%;
+  font-size: 30px;
+  /* background-color: #32a791; */
+  /* background-color: #f0f2f5; */
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
 }
 
 input {
@@ -43,13 +60,20 @@ checkbox {
 }
 
 button {
-  background-color: white;
+  background-color: #6b7588;
+  border-radius: 10px;
   color: black;
   width: 90px;
   height: 25px;
   margin-top: 1%;
 }
 
-h1 {
+
+.imagem {
   text-align: center;
 }
+
+h2 {
+  text-align: center;
+}
+
