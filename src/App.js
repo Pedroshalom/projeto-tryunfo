@@ -77,6 +77,10 @@ class App extends React.Component {
     }));
   };
 
+  // onDeleteButtonClick = () => {
+
+  // }
+
   render() {
     const { cardName,
       cardDescription,
@@ -93,7 +97,6 @@ class App extends React.Component {
     return (
       <div className="imagem">
         <img src={ logo } alt="logo" width="300px" />
-        <h2>Adicione sua carta</h2>
         <div className="divs-card">
           <Form
             onInputChange={ this.onInputChange }

@@ -23,6 +23,7 @@ class Form extends React.Component {
         <form>
           <label htmlFor="card-name">
             <strong>Nome da carta: </strong>
+            <br />
             <input
               placeholder="Digite o nome da carta"
               data-testid="name-input"
@@ -35,6 +36,7 @@ class Form extends React.Component {
 
           <label htmlFor="description">
             <strong>Descrição: </strong>
+            <br />
             <textarea
               placeholder="Descreva sobre sua carta"
               data-testid="description-input"
@@ -99,6 +101,7 @@ class Form extends React.Component {
 
           <label htmlFor="card-rare">
             <strong>Raridade: </strong>
+            <br />
             <select
               data-testid="rare-input"
               name="cardRare"
@@ -121,6 +124,7 @@ class Form extends React.Component {
             />}
             {hasTrunfo && <p>Você já tem um Super Trunfo em seu baralho</p>}
             <strong> Super Trunfo</strong>
+            <br />
           </label>
           <button
             type="button"
