@@ -28,7 +28,9 @@ class App extends React.Component {
     if (card.length === 0) {
       return false;
     }
-    return card.some((cards) => cards.hasTrunfo === true);
+    this.setState({
+      hasTrunfo: card.some((cards) => cards.cardTrunfo === true),
+    });
   };
 
   disabledButton = () => {
@@ -62,7 +64,6 @@ class App extends React.Component {
   };
 
   onSaveButtonClick = (objetoInfo) => {
-    this.verificaSupertrunfo();
     this.setState((prevState) => ({
       card: [...prevState.card, objetoInfo],
       previewOn: true,
@@ -73,8 +74,8 @@ class App extends React.Component {
       cardAttr1: 0,
       cardAttr2: 0,
       cardAttr3: 0,
-      hasTrunfo: true,
-    }));
+      cardTrunfo: false,
+    }), this.verificaSupertrunfo);
   };
 
   // onDeleteButtonClick = () => {
@@ -95,48 +96,50 @@ class App extends React.Component {
       card,
     } = this.state;
     return (
-      <div className="imagem">
-        <img src={ logo } alt="logo" width="300px" />
-        <div className="divs-card">
-          <Form
-            onInputChange={ this.onInputChange }
-            cardName={ cardName }
-            cardDescription={ cardDescription }
-            cardAttr1={ cardAttr1 }
-            cardAttr2={ cardAttr2 }
-            cardAttr3={ cardAttr3 }
-            cardImage={ cardImage }
-            cardRare={ cardRare }
-            cardTrunfo={ cardTrunfo }
-            hasTrunfo={ hasTrunfo }
-            isSaveButtonDisabled={ this.disabledButton() }
-            onSaveButtonClick={ this.onSaveButtonClick }
-          />
-          {
-            previewOn === true && card.map((e) => (<Card
-              key={ e.cardName }
-              cardName={ e.cardName }
-              cardDescription={ e.cardDescription }
-              cardImage={ e.cardImage }
-              cardAttr1={ e.cardAttr1 }
-              cardAttr2={ e.cardAttr2 }
-              cardAttr3={ e.cardAttr3 }
-              cardRare={ e.cardRare }
-              cardTrunfo={ e.cardTrunfo }
-            />))
-          }
-          <Card
-            cardName={ cardName }
-            cardDescription={ cardDescription }
-            cardAttr1={ cardAttr1 }
-            cardAttr2={ cardAttr2 }
-            cardAttr3={ cardAttr3 }
-            cardImage={ cardImage }
-            cardRare={ cardRare }
-            cardTrunfo={ cardTrunfo }
-          />
+      <main>
+        <div className="imagem">
+          <img src={ logo } alt="logo" width="300px" />
+          <div className="divs-card">
+            <Form
+              onInputChange={ this.onInputChange }
+              cardName={ cardName }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardImage={ cardImage }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+              hasTrunfo={ hasTrunfo }
+              isSaveButtonDisabled={ this.disabledButton() }
+              onSaveButtonClick={ this.onSaveButtonClick }
+            />
+            {
+              previewOn === true && card.map((e) => (<Card
+                key={ e.cardName }
+                cardName={ e.cardName }
+                cardDescription={ e.cardDescription }
+                cardImage={ e.cardImage }
+                cardAttr1={ e.cardAttr1 }
+                cardAttr2={ e.cardAttr2 }
+                cardAttr3={ e.cardAttr3 }
+                cardRare={ e.cardRare }
+                cardTrunfo={ e.cardTrunfo }
+              />))
+            }
+            <Card
+              cardName={ cardName }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardImage={ cardImage }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+            />
+          </div>
         </div>
-      </div>
+      </main>
     );
   }
 }

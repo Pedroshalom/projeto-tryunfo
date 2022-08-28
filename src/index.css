@@ -1,3 +1,10 @@
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,11 +20,56 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+main {
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+.atributoName {
+  width: 215px;
+  height: 30px;
+  background-color:aliceblue;
+  border: solid black;
+}
+
+textarea {
+  background-color:aliceblue;
+  border: solid black;
+}
+
+.imagemurl {
+  width: 100px;
+  height: 30px;
+  background-color:aliceblue;
+  border: solid black;
+}
+
+.options {
+  background-color:aliceblue;
+  border: solid black;
+}
+
+.atributos {
+  width: 64px;
+  height: 30px;
+  background-color:aliceblue;
+  border: solid black;
+}
 
 form {
   display: flex;
   flex-flow: column wrap;
-  box-sizing: border-box;    
+  box-sizing: border-box;   
+  flex-direction: column;
+  justify-content: center; 
+}
+
+.container {
+  display: flex;
+  justify-content: center;
 }
 
 .div-form {
@@ -26,7 +78,6 @@ form {
   color: black;
   justify-content: center;
   margin: auto;
-  width: 70%;
   font-size: 30px;
   /* background-color: #32a791; */
   /* background-color: #f0f2f5; */
@@ -34,7 +85,22 @@ form {
 
 .cards {
   display: flex;
-  flex-direction: row;
+  height: 550px;
+  justify-content: center;
+  margin: auto;
+  width: 70%;
+}
+
+.carta {
+  width: 115px;
+  height: 30px;
+}
+
+
+.imgagem {
+  /* border-radius: 100%; */
+  width: 70%;
+  height: 50%;
 }
 
 input {
@@ -55,13 +121,11 @@ label {
  margin-top: 1%;
 }
 
-checkbox {
-  display:flex;
-}
 
 button {
   background-color: #6b7588;
   border-radius: 10px;
+  border: solid black;
   color: black;
   width: 90px;
   height: 25px;

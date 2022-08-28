@@ -19,12 +19,13 @@ class Form extends React.Component {
     } = this.props;
 
     return (
-      <div className="div-form">
-        <form>
+      <div>
+        <form className="div-form">
           <label htmlFor="card-name">
             <strong>Nome da carta: </strong>
             <br />
             <input
+              className="atributoName"
               placeholder="Digite o nome da carta"
               data-testid="name-input"
               name="cardName"
@@ -49,8 +50,9 @@ class Form extends React.Component {
           </label>
 
           <label htmlFor="attr1">
-            <strong>Attr 1: </strong>
+            <strong>Atributo 1: </strong>
             <input
+              className="atributos"
               max={ 90 }
               min={ 0 }
               data-testid="attr1-input"
@@ -62,8 +64,9 @@ class Form extends React.Component {
           </label>
 
           <label htmlFor="attr2">
-            <strong>Attr 2: </strong>
+            <strong>Atributo 2: </strong>
             <input
+              className="atributos"
               max={ 90 }
               min={ 0 }
               data-testid="attr2-input"
@@ -75,8 +78,9 @@ class Form extends React.Component {
           </label>
 
           <label htmlFor="attr3">
-            <strong>Attr 3: </strong>
+            <strong>Atributo 3: </strong>
             <input
+              className="atributos"
               max={ 90 }
               min={ 0 }
               data-testid="attr3-input"
@@ -90,7 +94,8 @@ class Form extends React.Component {
           <label htmlFor="card-image">
             <strong>Imagem: </strong>
             <input
-              placeholder="Adicione uma imagem"
+              className="imagemurl"
+              placeholder="Add. uma URL"
               data-testid="image-input"
               name="cardImage"
               type="text"
@@ -103,6 +108,7 @@ class Form extends React.Component {
             <strong>Raridade: </strong>
             <br />
             <select
+              className="options"
               data-testid="rare-input"
               name="cardRare"
               value={ cardRare }
@@ -122,8 +128,7 @@ class Form extends React.Component {
               checked={ cardTrunfo }
               onChange={ onInputChange }
             />}
-            {hasTrunfo && <p>Você já tem um Super Trunfo em seu baralho</p>}
-            <strong> Super Trunfo</strong>
+            {!hasTrunfo ? 'Super Trunfo' : 'Você já tem um Super Trunfo em seu baralho'}
             <br />
           </label>
           <button
