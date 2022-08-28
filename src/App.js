@@ -78,10 +78,6 @@ class App extends React.Component {
     }), this.verificaSupertrunfo);
   };
 
-  // onDeleteButtonClick = () => {
-
-  // }
-
   render() {
     const { cardName,
       cardDescription,

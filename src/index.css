@@ -12,9 +12,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #32a791;
-  background-image: url(../images/foto.png);
+  background-image: url(../images/goku.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 1400px;
+  width: 100%;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -26,6 +30,12 @@ main {
   justify-content: center;
   flex-direction: row;
   width: 100%;
+}
+
+.cardss {
+  display: flex;
+  border: solid black;
+  height: 30px;
 }
 
 .atributoName {
